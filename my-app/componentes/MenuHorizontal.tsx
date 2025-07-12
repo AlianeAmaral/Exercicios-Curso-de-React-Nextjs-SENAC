@@ -9,7 +9,7 @@ export default function MenuHorizontal() {
 
             <div className="list-image">
                 <div
-                    className="bg-no-repeat bg-bottom bg-center bg-cover text-white text-center py-20 px-4"
+                    className="bg-no-repeat bg-center bg-cover text-white text-center py-20 px-4"
                     style={{ backgroundImage: "url('/background-1.jpg')" }}
                 />
                 <p className="text-center text-4xl pt-8 pb-3 font-balgruf">Guia de Receitas de Skyrim</p>

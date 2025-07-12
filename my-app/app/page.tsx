@@ -36,44 +36,103 @@ import Perfil from "@/componentes/Perfil";
 //   )
 // }
 
-function acao() {
-  <div>olá</div>
-}
+// EXERCICIO 3 - CARDS E MENU JUNTOS
+// function acao() {
+//   <div>olá</div>
+// }
 
-export default function Index() {
-  return (
-    <div>
-      <div className="flex justify-start">
-        <div>
-          <MenuLateral />
-        </div>
+// export default function Index() {
+//   return (
+//     <div>
+//       <div className="flex justify-start">
+//         <div>
+//           <MenuLateral />
+//         </div>
 
-        <div className="m-10">
-          <Perfil
-            nome="Alice"
-            email="alice@email.com"
-            detalhes="Ver Detalhes"
-            acessarPerfil={acao}
+//         <div className="m-10">
+//           <Perfil
+//             nome="Alice"
+//             email="alice@email.com"
+//             detalhes="Ver Detalhes"
+//             acessarPerfil={acao}
 
-          ></Perfil>
+//           ></Perfil>
 
-          <Perfil
-            nome="Alice"
-            email="alice@email.com"
-            detalhes="Ver Detalhes"
-            acessarPerfil={acao}
+//           <Perfil
+//             nome="Alice"
+//             email="alice@email.com"
+//             detalhes="Ver Detalhes"
+//             acessarPerfil={acao}
 
-          ></Perfil>
+//           ></Perfil>
 
-          <Perfil
-            nome="Alice"
-            email="alice@email.com"
-            detalhes="Ver Detalhes"
-            acessarPerfil={acao}
+//           <Perfil
+//             nome="Alice"
+//             email="alice@email.com"
+//             detalhes="Ver Detalhes"
+//             acessarPerfil={acao}
 
-          ></Perfil>
-        </div>
-      </div >
-    </div>
-  )
-}
+//           ></Perfil>
+//         </div>
+//       </div >
+//     </div>
+//   )
+// }
+
+//EXERCICIO 4 - RENDERIZANDO UMA LISTA QUALQUER
+
+// function Pessoa() {
+//     const lista = [
+
+//         {
+//             id: 1,
+//             nome: "joão",
+//             idade: 20
+//         },
+
+//         {
+//             id: 2,
+//             nome: "maria",
+//             idade: 17
+//         },
+
+//         {
+//             id: 3,
+//             nome: "larissa",
+//             idade: 25
+//         }
+//     ]
+
+//     return (
+//         <div>
+//             {lista.map((item) => (
+//                 <div key={item.id}>
+//                     <p>{item.nome} {item.idade}</p>
+//                 </div>
+//             ))}
+//         </div>
+//     )
+// }
+
+// export default function Index() {
+//     return (
+//         <div>
+//             <Pessoa />
+//         </div>
+//     );
+// }
+
+// VAMOS USAR ESTRUTURA TERNARIA PARA FAZER CONDIÇÃO NO HTML
+// qualquer numero que nao seja 0 ou campo vazio, vai dar verdadeiro, 0 ou vazio dá falso
+
+// export default function Index() {
+
+//     const estaLogado = false // você pode colocar true ou false
+
+//     return (
+//         <div>
+//             {estaLogado ? <h1> Olá, você está logado.</h1> : <div>Não está logado.</div>}
+//         </div>
+//     );
+// }
+
