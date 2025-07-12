@@ -6,6 +6,7 @@ import Footer from "@/componentes/Footer";
 import Header from "@/componentes/Header";
 import MenuLateral from "@/componentes/MenuLateral";
 import Perfil from "@/componentes/Perfil";
+import { useState } from "react";
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -134,5 +135,52 @@ import Perfil from "@/componentes/Perfil";
 //             {estaLogado ? <h1> Olá, você está logado.</h1> : <div>Não está logado.</div>}
 //         </div>
 //     );
+// }
+
+
+//COMO FAZER UM CONTADOR QUE AUMENTE A QUANTIDADE DE ITENS QUE VOCÊ ESTÁ ADICIONANDO, CLICANDO NO BOTÃO VAI ADICIONANDO MAIS 1
+
+// export default function Index() {
+
+//     const [contador, setContador] = useState(0)
+
+//     //const estaLogado = false
+
+//     function atualizarContador() {
+//         setContador(contador + 1)
+//     }
+
+//     return (
+//         <div>
+//             {contador}
+//             <button className="bg-red-300 text-white rounded-sm cursor-pointer" onClick={atualizarContador}> Atualizar</button>
+//         </div>
+//     )
+// }
+
+// ...lista escrevo dessa forma porque estou falando que tudo que tinha antes é para ser considerado + mais o que tem hoje
+//o useState é para criar variaveis
+
+// EXERCICIO PARA MOSTRAR O useState com LISTA
+
+// export default function Index() {
+
+//     const [contador, setContador] = useState(0)
+//     const [usuario, setUsuario] = useState<usuario>()
+
+//     const [lista, setLista] = useState<[]>() //coloco colchetes porque é lista, só lista usa colchete e está vazio, então é uma lista vazia
+
+//     function atualizarContador() {
+//         setContador(contador + 1) //melhor estudar mais o que é esse setContador
+
+//     }
+
+//     return (
+//         <div>
+//             {contador}
+
+//             <button className="bg-red-300 text-white rounded-sm cursor-pointer" onClick={atualizarContador}> Atualizar</button>
+//         </div>
+//     )
 // }
 
