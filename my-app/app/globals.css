@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #0e0d1b;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fonte personalizada que adicionei:  */
+
+@font-face {
+  font-family: 'dovahkiin';
+  src: url('/dovahkiin-font/dovahkiin.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'balgruf';
+  src: url('/balgruf-font/balgruf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
