@@ -1,16 +1,15 @@
 "use client"
 
 import AreaUsuario from "@/componentes/AreaUsuario";
+import APIExerc2 from "@/componentes/Aula3/APITeste2";
+import ClientExerc1 from "@/componentes/Aula3/APIClientExerc1";
 import Card from "@/componentes/Card";
-import UseStateExerc1 from "@/componentes/Exercicio4/UseStateExerc1";
-import UseStateExerc2 from "@/componentes/Exercicio4/UseStateExerc2";
-import UseStateExerc3 from "@/componentes/Exercicio4/UseStateExerc3";
-import APIExerc1 from "@/componentes/Exercicio5/APIExerc1";
 import Footer from "@/componentes/Footer";
 import Header from "@/componentes/Header";
 import MenuLateral from "@/componentes/MenuLateral";
 import Perfil from "@/componentes/Perfil";
 import { useState } from "react";
+import APIClientExerc1 from "@/componentes/Aula3/APIClientExerc1";
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -218,10 +217,10 @@ import { useState } from "react";
 //     )
 // }
 
-export default function Index() {
+export default async function Index() {
     return (
        <div>    
-            <APIExerc1/>
+            <APIClientExerc1/>
        </div>
     )
 }
