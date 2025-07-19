@@ -2,6 +2,7 @@
 
 import AreaUsuario from "@/componentes/AreaUsuario";
 import Exercicio1 from "@/componentes/Aula3/Exercicio1";
+import Exercicio2 from "@/componentes/Aula3/Exercicio2";
 import Card from "@/componentes/Card";
 import Footer from "@/componentes/Footer";
 import Header from "@/componentes/Header";
@@ -217,6 +218,6 @@ import { useState } from "react";
 
 export default function Index() {
     return (
-        <Exercicio1/>
+        <Exercicio2/>
     )
 }
