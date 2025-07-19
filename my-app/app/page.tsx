@@ -1,6 +1,7 @@
 "use client"
 
 import AreaUsuario from "@/componentes/AreaUsuario";
+import Exercicio1 from "@/componentes/Aula3/Exercicio1";
 import Card from "@/componentes/Card";
 import Footer from "@/componentes/Footer";
 import Header from "@/componentes/Header";
@@ -184,3 +185,38 @@ import { useState } from "react";
 //     )
 // }
 
+// EXERCICIO-1 DA AULA 3 QUE CONTINUAMOS NA AULA 4
+
+// export default function Index(){
+
+//     const [contador, setContador] = useState(0)
+
+//     function incrementador(){
+//         setContador(contador + 1)
+//     }
+
+//     function decrementador(){
+//         if (contador <= 0) {
+//             setContador(0)
+//         }  
+//         else {
+//             setContador(contador - 1)
+//         }
+//     }
+
+//     return (
+//         <div>
+//             <div className="h-screen flex justify-center items-center">
+//                     <button className="bg-green-700 text-white cursor-pointer rounded-sm py-4 px-8" onClick={incrementador}> Adicionar</button>
+//                     <button className="bg-gray-300 text-black border-2 rounded-sm m-10 px-5 py-3"> {contador}</button> 
+//                     <button className="bg-red-700 text-white cursor-pointer rounded-sm py-4 px-9" onClick={decrementador}> Subtrair</button>    
+//             </div>
+//         </div>
+//     )
+// }
+
+export default function Index() {
+    return (
+        <Exercicio1/>
+    )
+}
