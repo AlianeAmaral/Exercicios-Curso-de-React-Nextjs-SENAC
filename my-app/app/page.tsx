@@ -8,8 +8,8 @@ import Footer from "@/componentes/Footer";
 import Header from "@/componentes/Header";
 import MenuLateral from "@/componentes/MenuLateral";
 import Perfil from "@/componentes/Perfil";
-import { useState } from "react";
 import APIClientExerc1 from "@/componentes/Aula3/APIClientExerc1";
+import APIMenuExerc1 from "@/componentes/Aula3/APIMenuExerc1";
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -220,7 +220,10 @@ import APIClientExerc1 from "@/componentes/Aula3/APIClientExerc1";
 export default async function Index() {
     return (
        <div>    
-            <APIClientExerc1/>
+            <div className="flex">
+                <APIMenuExerc1/>
+                <APIClientExerc1/>
+            </div>
        </div>
     )
 }

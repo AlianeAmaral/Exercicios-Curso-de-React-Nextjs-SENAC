@@ -1,5 +1,4 @@
-
-export default function MenuLateral() {
+export default function APIMenuExerc1() {
     return (
         <div>
             <div className="">
