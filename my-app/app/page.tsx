@@ -1,9 +1,11 @@
 "use client"
 
 import AreaUsuario from "@/componentes/AreaUsuario";
-import Exercicio1 from "@/componentes/Aula3/Exercicio1";
-import Exercicio2 from "@/componentes/Aula3/Exercicio2";
 import Card from "@/componentes/Card";
+import UseStateExerc1 from "@/componentes/Exercicio4/UseStateExerc1";
+import UseStateExerc2 from "@/componentes/Exercicio4/UseStateExerc2";
+import UseStateExerc3 from "@/componentes/Exercicio4/UseStateExerc3";
+import APIExerc1 from "@/componentes/Exercicio5/APIExerc1";
 import Footer from "@/componentes/Footer";
 import Header from "@/componentes/Header";
 import MenuLateral from "@/componentes/MenuLateral";
@@ -218,6 +220,8 @@ import { useState } from "react";
 
 export default function Index() {
     return (
-        <Exercicio2/>
+       <div>    
+            <APIExerc1/>
+       </div>
     )
 }
