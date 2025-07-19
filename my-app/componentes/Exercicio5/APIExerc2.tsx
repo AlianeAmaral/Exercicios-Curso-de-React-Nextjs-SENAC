@@ -1,5 +1,8 @@
 type userProps = {
-
+    id: number,
+    name: string,
+    username: string,
+    email: string
 }
 
 export default async function APIExerc2(){ // declaramos aqui que ela vai ser assíncrona com async, só com essa palavra será permitido adicionar o "await" ali abaixo.
