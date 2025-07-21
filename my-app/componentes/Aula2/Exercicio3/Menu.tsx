@@ -1,5 +1,5 @@
 
-export default function MenuLateral() {
+export default function Menu() {
     return (
         <div>
             <div className="">

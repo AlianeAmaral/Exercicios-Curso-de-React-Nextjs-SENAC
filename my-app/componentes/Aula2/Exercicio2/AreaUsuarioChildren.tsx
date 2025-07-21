@@ -5,7 +5,7 @@ type props = {
     executar: () => void
 }
 
-export default function AreaUsuario({ titulo, children, botao, executar }: props) {
+export default function AreaUsuarioChildren({ titulo, children, botao, executar }: props) {
     return (
         <div>
             <div className="h-screen flex justify-center items-center">
@@ -16,7 +16,7 @@ export default function AreaUsuario({ titulo, children, botao, executar }: props
                     <div className="text-sm pb-5">{children}</div>
 
                     <div className="flex justify-center m-3">
-                        <button className="bg-black text-white rounded-sm cursor-pointer w-50 h-10" onClick={executar}> {botao}</button>
+                        <button className="bg-pink-400 text-white rounded-sm cursor-pointer w-50 h-10 transition ease-in-out duration-800 hover:scale-103" onClick={executar}> {botao}</button>
                     </div>
                 </div>
             </div>

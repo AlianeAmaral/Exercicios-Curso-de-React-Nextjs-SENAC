@@ -5,7 +5,7 @@ type userProps = {
     email: string
 }
 
-export default async function APITeste2(){ // se o componente for async, no page.tsx precisa ser async (assíncrono) também.
+export default async function ConexaoAPIType(){ // se o componente for async, no page.tsx precisa ser async (assíncrono) também.
     
     const resposta = await fetch ("https://jsonplaceholder.typicode.com/users")
     const dados:userProps[] = await resposta.json(); // uma lista do tipo userProps

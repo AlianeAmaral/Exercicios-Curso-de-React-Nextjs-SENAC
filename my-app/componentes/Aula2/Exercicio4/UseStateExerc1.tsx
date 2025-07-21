@@ -22,7 +22,7 @@ export default function UseStateExerc1(){
     return (
         <div className="h-screen flex justify-center items-center flex-col text-center">
             <div className="items-end">
-                <p className="font-bold">Exercício 1 - Contador com incremento e decremento.</p>
+                <p className="font-bold">Exercício 1 de UseState - Contador com incremento e decremento.</p>
                 <p className="text-purple-600">Crie dois botões, um para somar e outro para subtrair.</p>
                 <p>Extra: Adicione uma verificação para que o número nunca fique abaixo de zero.</p>
             </div>

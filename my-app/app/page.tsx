@@ -1,15 +1,24 @@
 "use client"
 
-import AreaUsuario from "@/componentes/AreaUsuario";
-import APIExerc2 from "@/componentes/Aula3/APITeste2";
-import ClientExerc1 from "@/componentes/Aula3/APIClientExerc1";
-import Card from "@/componentes/Card";
-import Footer from "@/componentes/Footer";
-import Header from "@/componentes/Header";
-import MenuLateral from "@/componentes/MenuLateral";
-import Perfil from "@/componentes/Perfil";
-import APIClientExerc1 from "@/componentes/Aula3/APIClientExerc1";
-import APIMenuExerc1 from "@/componentes/Aula3/APIMenuExerc1";
+import Exercicio1MenuHorizontal from "@/componentes/Aula1/Exercicio1/MenuHorizontal"
+import Exercicio2MenuVertical from "@/componentes/Aula1/Exercicio2/MenuVertical"
+import TelaLogin from "@/componentes/Aula1/Exercicio3/TelaLogin"
+import Exercicio3Login from "@/componentes/Aula1/Exercicio3/TelaLogin"
+import BotaoCores from "@/componentes/Aula1/Exercicio4/BotaoCores"
+import Exercicio4BotaoCores from "@/componentes/Aula1/Exercicio4/BotaoCores"
+import Exerc4 from "@/componentes/Aula1/Exercicio4/BotaoCores"
+import Card from "@/componentes/Aula2/Exercicio1/Card"
+import Footer from "@/componentes/Aula2/Exercicio1/Footer"
+import Header from "@/componentes/Aula2/Exercicio1/Header"
+import AreaUsuarioChildren from "@/componentes/Aula2/Exercicio2/AreaUsuarioChildren"
+import Perfil from "@/componentes/Aula2/Exercicio3/ListaUsuarios"
+import Menu from "@/componentes/Aula2/Exercicio3/Menu"
+import UseStateExerc1 from "@/componentes/Aula2/Exercicio4/UseStateExerc1"
+import UseStateExerc2 from "@/componentes/Aula2/Exercicio4/UseStateExerc2"
+import UseStateExerc3 from "@/componentes/Aula2/Exercicio4/UseStateExerc3"
+import ConexaoAPIAsyncAwait from "@/componentes/Aula3/Apresentação API - Async e Await/TeoriaConexaoAPIAsyncAwait"
+import ConexaoAPIType from "@/componentes/Aula3/Apresentação API - Async e Await/ConexaoAPIType"
+import ListaLojaFake from "@/componentes/Aula3/Exercicio1/ListaLojaFake"
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -217,13 +226,230 @@ import APIMenuExerc1 from "@/componentes/Aula3/APIMenuExerc1";
 //     )
 // }
 
-export default async function Index() {
+// export default async function Index() {
+//     return (
+//        <div>    
+//             <div className="flex">
+//                 <APIMenuExerc1/>
+//                 <APIClientExerc1/>
+//             </div>
+//        </div>
+//     )
+// }
+
+// export default function Index(){
+//     return (
+//         <div>
+//             <Exercicio4BotaoCores 
+//         </div>
+//     )
+// }
+
+// ############################################### COMO CHAMAR OS COMPONENTES NO PAGE ###############################################
+
+// *********************************************** Aula1 - Exercicio1 - MenuHorizontal ***********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <Exercicio1MenuHorizontal/>
+//         </div>
+//     )
+// }
+
+// ************************************************ Aula1 - Exercicio2 - MenuVertical ************************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <Exercicio2MenuVertical/>
+//         </div>
+//     )
+// }
+
+// ************************************************** Aula1 - Exercicio3 - TelaLogin **************************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <TelaLogin/>
+//         </div>
+//     )
+// }
+
+// ************************************************** Aula1 - Exercicio4 - BotaoCores **************************************************
+// export default function Index(){
+//     return (
+//         <div className="h-screen flex justify-center items-center">  
+//             <div className="space-y-3">
+//                 <BotaoCores
+//                     color="azul"
+//                     titulo="título que desejar"
+//                     subtitulo="subtitulo que desejar"
+//                 />
+//                 <BotaoCores
+//                     color="verde"
+//                     titulo="título que desejar"
+//                     subtitulo="subtitulo que desejar"
+//                 />
+//                 <BotaoCores
+//                     color="vermelho"
+//                     titulo="título que desejar"
+//                     subtitulo="subtitulo que desejar"
+//                 />
+//             </div>
+//         </div>
+//     )
+// }
+
+// ********************************************* Aula2 - Exercicio1 - Header,Card,Footer *********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <Header/>
+//             <Card/>
+//             <Footer/>
+//         </div>
+//     )
+// }
+
+// ********************************************* Aula2 - Exercicio2 - AreaUsuarioChildren *********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <AreaUsuarioChildren
+//                 titulo="Área do Usuário" // pode ser o título que desejar.
+//                 children="Bem-vindo ao sistema! Essa parte veio do children."
+//                 botao="Executar Ação"
+//                 executar={() => alert("alert com sucesso!")}
+//             />
+//         </div>
+//     )
+// }
+
+// ********************************************* Aula2 - Exercicio3 - ListaUsuarios *********************************************
+// export default function Index (){
+//     return (
+//     <div className="flex">
+//         <div>
+//             <Menu/>
+//         </div>
+
+//         <div className="space-y-10 ml-10 mt-5">
+//             <Perfil
+//                 nome="Alice"
+//                 email="alice@email.com"
+//                 detalhes="Ver detalhes"
+//                 acessarPerfil={() => alert("Acessou o perfil 1.")}
+//             />
+//             <Perfil
+//                 nome="Bruno"
+//                 email="bruno@email.com"
+//                 detalhes="Ver detalhes"
+//                 acessarPerfil={() => alert("Acessou o perfil 2.")}
+//             />
+//             <Perfil
+//                 nome="Carla"
+//                 email="carla@email.com"
+//                 detalhes="Ver detalhes"
+//                 acessarPerfil={() => alert("Acessou o perfil 3.")}
+//             />
+//         </div>
+//     </div>
+//     )
+// }
+
+
+// ********************************************* Aula2 - Exercicio4 - UseStateExerc1 *********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <UseStateExerc1/>
+//         </div>
+//     )
+// }
+
+// ********************************************* Aula2 - Exercicio4 - UseStateExerc2 *********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <UseStateExerc2/>
+//         </div>
+//     )
+// }
+
+// ********************************************* Aula2 - Exercicio4 - UseStateExerc3 *********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <UseStateExerc3/>
+//         </div>
+//     )
+// }
+
+// ********************************************* Aula2 - Exercicio4 - UseStateExerc4 *********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <UseStateExerc4/>
+//         </div>
+//     )
+// }
+
+// ********************************************* Aula2 - Exercicio4 - UseStateExerc5 *********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <UseStateExerc5/>
+//         </div>
+//     )
+// }
+
+// ********************************************* Aula2 - Exercicio4 - UseStateExerc6 *********************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <UseStateExerc6/>
+//         </div>
+//     )
+// }
+
+// ***************************************** Aula3 - Apresentação - ConexaoAPIAsyncAwait *****************************************
+// export default function Index(){
+//     return (
+//         <div>
+//             <TeoriaConexaoAPIAsyncAwait/>
+//         </div>
+//     )
+// }
+// Obs: Foi notado que quando há conexão com alguma API, é necessário atualizar a página para coletar os efeitos, mesmo com o Tailwind Intellisense.
+
+// ******************************************* Aula3 - Apresentação - ConexaoAPIType *********************************************
+// export default async function Index(){
+//     return (
+//         <div>
+
+//             <h1 className="font-bold text-2xl p-5">Lista de usuários que estão vindo direto de outra API da JSON Place Holder: </h1>
+
+//             <div>
+//                 <ConexaoAPIType/>
+//             </div>
+//         </div>
+//     )
+// }
+
+// ***************************************** Aula3 - Exercicio1 - ListaLojaFake *****************************************
+
+export default async function Index(){
     return (
-       <div>    
+        <div>
             <div className="flex">
-                <APIMenuExerc1/>
-                <APIClientExerc1/>
+                <div>
+                    <Menu/>
+                </div>
+
+                <div className="ml-7">
+                    <ListaLojaFake/>
+                </div>
             </div>
-       </div>
+        </div>
     )
 }
+

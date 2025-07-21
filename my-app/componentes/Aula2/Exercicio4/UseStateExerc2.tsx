@@ -14,7 +14,7 @@ export default function UseStateExerc2(){
     return (
         <div className="h-screen flex justify-center items-center flex-col text-center">
             <div className="items-end m-5">
-                <p className="font-bold">Exercício 2 – Mostrar ou ocultar texto.</p>
+                <p className="font-bold">Exercício 2 de UseState – Mostrar ou ocultar texto.</p>
                 <p className="text-purple-600">Crie um botão que ao ser clicado alterna entre mostrar e esconder um parágrafo de texto.</p>
                 <p>Dica: Use boolean no useState.</p>
             </div>
