@@ -447,7 +447,7 @@ export default function Index(){
                     <MenuLoja/>
                 </div>
 
-                <div className="ml-7">
+                <div>
                     <ListaLojaFake/>
                 </div>
             </div>
