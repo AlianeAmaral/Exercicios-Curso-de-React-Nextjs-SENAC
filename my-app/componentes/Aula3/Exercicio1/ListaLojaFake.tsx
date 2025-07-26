@@ -1,6 +1,8 @@
 "use client"
 
-import { useState } from "react";
+// preciso me preocupar do useState não expandir todos ao mesmo tempo, e sim individualmente.
+
+import { useState, useEffect } from "react";
 
 type Products = { // os atributos sempre precisam ser iguais aos que estão na API?
     
@@ -19,15 +21,15 @@ type Products = { // os atributos sempre precisam ser iguais aos que estão na A
 
 export default async function ListaLojaFake(){ 
     
-    const resposta = await fetch ("https://fakestoreapi.com/products")
+    const resposta = await fetch ("https://fakestoreapi.com/products") {/* foi pedido para trocar o fetch para um useEffec */}
     const dados:Products[] = await resposta.json();
     console.log(dados) 
 
-    // const [expandir, setExpandir] = useState(false)
+    const [expandir, setExpandir] = useState(false)
 
-    // function alternador() {
-    //     setExpandir(!expandir)
-    // }
+    function alternador() {
+        setTexto(!texto)
+    }
 
     return (
         <div> 
@@ -38,6 +40,7 @@ export default async function ListaLojaFake(){
                     <div className="flex flex-col mt-5"> {/*card total com todos os blocos*/}
 
                         <div className="bg-white w-90 p-3 rounded-2xl"> {/*card do bloco com texto, corta o que ultrapassa*/}
+
                             <div className="bg-white flex justify-center flex-col"> {/*inicio do card da imagem*/}
                                 <div className="bg-white w-full h-40 flex justify-center items-center">  
                                     <div>
@@ -46,7 +49,6 @@ export default async function ListaLojaFake(){
                                 </div> {/*fim do card da imagem*/}
 
                                 <div className="bg-white flex justify-start m-2 h-35 overflow-hidden">
-
                                     <div> {/*inicio do card do texto*/}
                                         <p className="font-bold text-base text-black">{item.title}</p>
                                         <p className="text-sm text-gray-500">{item.category}</p>
@@ -56,8 +58,8 @@ export default async function ListaLojaFake(){
                                 </div>
                             </div>
 
-                            <div className=" bg-rose-700 rounded-2xl text-center flex justify-center items-center text-white h-7 cursor-pointer">
-                                <button>Ver mais</button>
+                            <div className=" bg-rose-700 rounded-2xl text-center flex justify-center items-center text-white h-7 cursor-pointer"> {texto ? expandir: } {/* por que o cursor pointer não funcionou aqui no texto "ver mais", só no bg? */}
+                                <button className="cursor-pointer" onClick={alternador}>Ver mais</button> 
                             </div>
 
                         </div> 
