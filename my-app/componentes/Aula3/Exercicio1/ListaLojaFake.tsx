@@ -31,7 +31,8 @@ export default async function ListaLojaFake(){
     console.log(dados) 
 
     return (
-            <div className="flex flex-wrap space-x-3 pt-3 justify-center">
+        <div>
+            <div className="flex flex-wrap space-x-7 pt-3 justify-center">
                 {dados.map((item) => ( 
                 <div key={item.id}> 
 
@@ -56,9 +57,9 @@ export default async function ListaLojaFake(){
                                 </div>
                             </div>
 
-                            <div className=" bg-rose-700 rounded-2xl text-center flex justify-center items-center text-white h-7 cursor-pointer m-1">
+                            <div className=" bg-rose-700 rounded-2xl text-center flex justify-center items-center text-white h-8 cursor-pointer m-1">
                                 <button className="cursor-pointer text-sm">
-                                    <Link href={`/produto/${item.id}`}>Ver detalhes do produto</Link>   
+                                    <Link href={"/"}>Ver detalhes do produto</Link>   
                                 </button>
                             </div>
                         </div> 
@@ -68,6 +69,7 @@ export default async function ListaLojaFake(){
                 ))}
 
             </div>
+        </div>
     )
 
 }

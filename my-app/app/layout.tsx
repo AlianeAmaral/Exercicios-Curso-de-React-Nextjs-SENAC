@@ -28,13 +28,15 @@ export default function RootLayout({
     <html lang="en">
       <body>
 
-          <div className="flex h-full fixed">
+      <div className="flex h-screen">
+          <div>
             <MenuLoja/>
           </div>
           
-          <div>
+          <div className="flex justify-center items-center">
             {children}
           </div>
+      </div>
 
       </body>
     </html>
