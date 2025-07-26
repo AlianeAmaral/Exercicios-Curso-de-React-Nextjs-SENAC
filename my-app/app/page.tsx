@@ -19,6 +19,8 @@ import UseStateExerc3 from "@/componentes/Aula2/Exercicio4/UseStateExerc3"
 import ConexaoAPIAsyncAwait from "@/componentes/Aula3/Apresentação API - Async e Await/TeoriaConexaoAPIAsyncAwait"
 import ConexaoAPIType from "@/componentes/Aula3/Apresentação API - Async e Await/ConexaoAPIType"
 import ListaLojaFake from "@/componentes/Aula3/Exercicio1/ListaLojaFake"
+import MenuXXX from "@/componentes/Aula3/Exercicio1/MenuLoja"
+import MenuLoja from "@/componentes/Aula3/Exercicio1/MenuLoja"
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -437,12 +439,12 @@ import ListaLojaFake from "@/componentes/Aula3/Exercicio1/ListaLojaFake"
 
 // ***************************************** Aula3 - Exercicio1 - ListaLojaFake *****************************************
 
-export default async function Index(){
+export default function Index(){
     return (
         <div>
             <div className="flex">
                 <div>
-                    <Menu/>
+                    <MenuLoja/>
                 </div>
 
                 <div className="ml-7">
