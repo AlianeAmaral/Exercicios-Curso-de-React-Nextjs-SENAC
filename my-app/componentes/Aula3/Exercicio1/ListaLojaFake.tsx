@@ -47,13 +47,13 @@ export default async function ListaLojaFake(){
 
     return (
         <div> 
-            <div className="flex flex-wrap space-x-15 space-y-5 pt-5 justify-center">
+            <div className="flex flex-wrap space-x-3 pt-3 justify-center">
                 {dados.map((item) => ( 
                 <div key={item.id}>
 
-                    <div className="flex flex-col mt-5 border-white border-4 rounded-sm"> {/*card total com todos os blocos*/}
+                    <div className="flex flex-col mt-5 border-white border-4 rounded-2xl"> {/*card total com todos os blocos*/}
 
-                        <div className="bg-white h-75 w-80 overflow-hidden"> {/*card do bloco com texto, corta o que ultrapassa*/}
+                        <div className="bg-white h-75 w-90 overflow-hidden p-3"> {/*card do bloco com texto, corta o que ultrapassa*/}
                             <div className="bg-white flex justify-center flex-col"> {/*inicio do card da imagem*/}
                                 <div className="bg-white w-full h-40 flex justify-center items-center">  
                                     <div>
