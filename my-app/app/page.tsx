@@ -22,6 +22,7 @@ import ListaLojaFake from "@/componentes/Aula3/Exercicio1/ListaLojaFake"
 import MenuXXX from "@/componentes/Aula3/Exercicio1/MenuLoja"
 import MenuLoja from "@/componentes/Aula3/Exercicio1/MenuLoja"
 import Link from "next/link"
+import { Children } from "react"
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -438,7 +439,7 @@ import Link from "next/link"
 //     )
 // }
 
-// ***************************************** Aula3 - Exercicio1 - ListaLojaFake *****************************************
+// ***************************************** Aula3 - Exercicio1 - ListaLojaFake sem Ver Mais *****************************************
 
 // export default function Index(){
 //     return (
@@ -480,20 +481,30 @@ import Link from "next/link"
 //     );
 // }
 
-// ***************************************** Aula4 - ApresentaçãoRotas - rotasdinamicas *****************************************
+// ***************************************** Aula4 - ApresentaçãoRotas - rotasdinamicas com Ver Mais *****************************************
+
+// export default function Index(){
+//     return (
+//         <div>
+//             <div className="flex"> 
+//                 <div>
+//                     <MenuLoja/>
+//                 </div>
+
+//                 <div>
+//                     <ListaLojaFake/>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// ***************************************** Aula4 - ApresentaçãoRotas - rotasdinamicas com Ver Mais *****************************************
 
 export default function Index(){
     return (
         <div>
-            <div className="flex"> 
-                <div>
-                    <MenuLoja/>
-                </div>
-
-                <div>
-                    <ListaLojaFake/>
-                </div>
-            </div>
+            <ListaLojaFake/>
         </div>
-    )
+    );
 }
