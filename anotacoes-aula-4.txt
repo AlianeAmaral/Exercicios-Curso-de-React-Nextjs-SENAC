@@ -1,0 +1,9 @@
+se eu criar qualquer pata dentro de app, é uma rota do sistema
+
+por isso que componentes foi criado fora da pasta app
+se eu criar uma pasta usuario dentro de app, vai criar uma URL possivel: http://localhost:3000/usuario
+
+mas nao vai funcionar porque precisa criar um arquivo page dentro da pasta usuario
+o arquivo vai ser criado como tsx porque é tsx e nao ts?
+
+R: o tsx é porque vamos fazer um return de html
