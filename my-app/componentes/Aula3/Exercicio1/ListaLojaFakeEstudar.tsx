@@ -20,11 +20,43 @@ type Products = { // os atributos sempre precisam ser iguais aos que estão na A
     }
 }
 
-export default async function ListaLojaFake(){
+export default function ListaLojaFake(){ // 3. o async foi retirado.
     
-    const resposta = await fetch ("https://fakestoreapi.com/products")
-    const dados:Products[] = await resposta.json();
-    console.log(dados) 
+    // const resposta = await fetch ("https://fakestoreapi.com/products") {/* 1. foi pedido para trocar o fetch para um useEffect, substituir tudo pelo que está abaixo.*/}
+    // const dados:Products[] = await resposta.json();
+    // console.log(dados) 
+
+    // const [expandir, setExpandir] = useState(false)
+
+    // function alternador() {
+    //     setTexto(!texto)
+    // }
+
+    // 2. estudar como usar o useEffect e as propriedades abaixo, iniciar estudo daqui ...
+
+    // const [dados, setDados] = useState<Products[]>([]);
+    // const [expandido, setExpandido] = useState<Set<number>>(new Set());
+
+    // useEffect(() => {
+    //     fetch("https://fakestoreapi.com/products")
+    //         .then(res => res.json())
+    //         .then((data: Products[]) => setDados(data));
+    // }, []);
+
+    // function alternador(id: number) {
+    //     setExpandido(prev => {
+    //         const novoSet = new Set(prev);
+    //             if (novoSet.has(id)) {
+    //                 novoSet.delete(id);
+    //             } else {
+    //                 novoSet.add(id);
+    //             }
+
+    //             return novoSet;
+    //     });
+    // }
+
+    // ... até aqui.
 
     return (
         <div> 
@@ -53,12 +85,11 @@ export default async function ListaLojaFake(){
                                 </div>
                             </div>
 
-                            <div className=" bg-rose-700 rounded-2xl text-center flex justify-center items-center text-white h-7 cursor-pointer">
-                                <button className="cursor-pointer text-sm"> Ver mais</button>
+                            <div className=" bg-rose-700 rounded-2xl text-center flex justify-center items-center text-white h-7 cursor-pointer" onClick={() => alternador(item.id)}> {/* por que o cursor pointer não funcionou aqui no texto "ver mais", só no bg? mas, adicionei o onClick que deu certo, o item.id vai permitir ver mais somente de 1 item, e não de todos ao mesmo tempo. */}
+                                <button className="cursor-pointer text-sm"> {expandido.has(item.id) ? "Ver menos" : "Ver mais"}</button> {/*estudar melhor o funcionamento dessa ternária*/}
                             </div>
 
                         </div> 
-                        
                     </div>
                 </div>
                 ))}
