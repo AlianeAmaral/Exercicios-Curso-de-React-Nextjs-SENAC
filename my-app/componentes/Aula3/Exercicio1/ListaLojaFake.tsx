@@ -46,22 +46,44 @@ export default async function ListaLojaFake(){
     // )
 
     return (
-        <div>
+        <div> 
+            <div className="flex flex-wrap space-x-10">
+                {dados.map((item) => ( 
+                <div key={item.id}>
 
-            {dados.map((item) => ( 
-            
-            <div key={item.id}>
+                    <div className="flex flex-col mt-5 border-green-300 border-4 rounded-sm"> {/*card total com todos os blocos*/}
 
-            
+                        <div className="bg-orange-700 h-80"> {/*card do bloco com texto*/}
 
+                            <div className="bg-black flex justify-center flex-col w-70"> {/*inicio do card da imagem*/}
 
-            
+                                <div className="bg-purple-400 w-full h-40 w-50 flex justify-center items-center">
+                                    
+                                    <div>
+                                        <img className="max-w-45 max-h-35" src={item.image}></img>
+                                    </div>
 
+                                </div> {/*fim do card da imagem*/}
+
+                                <div className="bg-red-500 h-80 flex justify-start m-2">
+
+                                    <div> {/*inicio do card do texto*/}
+
+                                        <p>{item.title}</p>
+                                        <b>{item.price}</b>
+                                        <p>{item.category}</p>
+                                        <p>$ {item.price}</p>
+
+                                    </div> {/*fim do card do texto*/}
+
+                                </div>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                ))}
 
             </div>
-
-            ))}
-
         </div>
     )
 
