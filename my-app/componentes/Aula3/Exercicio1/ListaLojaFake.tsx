@@ -47,38 +47,33 @@ export default async function ListaLojaFake(){
 
     return (
         <div> 
-            <div className="flex flex-wrap space-x-2">
+            <div className="flex flex-wrap space-x-15 space-y-5 pt-5 justify-center">
                 {dados.map((item) => ( 
                 <div key={item.id}>
 
                     <div className="flex flex-col mt-5 border-white border-4 rounded-sm"> {/*card total com todos os blocos*/}
 
                         <div className="bg-white h-75 w-80 overflow-hidden"> {/*card do bloco com texto, corta o que ultrapassa*/}
-
                             <div className="bg-white flex justify-center flex-col"> {/*inicio do card da imagem*/}
-
-                                <div className="bg-white w-full h-40 flex justify-center items-center">
-                                    
+                                <div className="bg-white w-full h-40 flex justify-center items-center">  
                                     <div>
                                         <img className="max-w-45 max-h-35" src={item.image}></img>
                                     </div>
-
                                 </div> {/*fim do card da imagem*/}
 
                                 <div className="bg-white flex justify-start m-2 h-35 overflow-hidden">
 
                                     <div> {/*inicio do card do texto*/}
-
                                         <p className="font-bold text-base text-black">{item.title}</p>
                                         <p className="text-sm text-gray-500">{item.category}</p>
                                         <p className="font-bold text-green-500">$ {item.price}</p>
                                         <p className="text-xs text-gray-500">{item.description}</p>
-
                                     </div> {/*fim do card do texto*/}
 
                                 </div>
                             </div>
                         </div> 
+
                     </div>
                 </div>
                 ))}
