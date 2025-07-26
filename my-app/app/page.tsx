@@ -21,6 +21,7 @@ import ConexaoAPIType from "@/componentes/Aula3/Apresentação API - Async e Awa
 import ListaLojaFake from "@/componentes/Aula3/Exercicio1/ListaLojaFake"
 import MenuXXX from "@/componentes/Aula3/Exercicio1/MenuLoja"
 import MenuLoja from "@/componentes/Aula3/Exercicio1/MenuLoja"
+import Link from "next/link"
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -439,10 +440,52 @@ import MenuLoja from "@/componentes/Aula3/Exercicio1/MenuLoja"
 
 // ***************************************** Aula3 - Exercicio1 - ListaLojaFake *****************************************
 
+// export default function Index(){
+//     return (
+//         <div>
+//             <div className="flex"> 
+//                       ao invés de usar o flex aqui em cima, podemos usar children.
+//                 <div>
+//                     <MenuLoja/>
+//                 </div>
+
+//                 <div>
+//                     <ListaLojaFake/>
+//                 </div>
+//             </div>
+//         </div>
+//     )
+// }
+
+// ***************************************** Aula4 - ApresentaçãoRotas - comousarlink *****************************************
+
+// como linkamos páginas? tipos de rotas, como criar, etc.
+// nesse exemplo abaixo, experimentamos mudar da página atual para outra página que é o rotas/testelink/page.tsx dessa outra página.
+
+// export default function Index (){
+//     return (
+//         <div>
+//             <Link href={"/aula4/comousarlink"}> Clique aqui para mudar de página.</Link>
+//         </div>
+//     )
+// }
+
+// No componente seria uma rota dentro da pasta app, da seguinte forma:
+
+// "use client"
+
+// export default function testelink(){
+//     return (
+//         <div>Bem-vindo a outra página.</div>
+//     );
+// }
+
+// ***************************************** Aula4 - ApresentaçãoRotas - rotasdinamicas *****************************************
+
 export default function Index(){
     return (
         <div>
-            <div className="flex">
+            <div className="flex"> 
                 <div>
                     <MenuLoja/>
                 </div>
@@ -454,4 +497,3 @@ export default function Index(){
         </div>
     )
 }
-
