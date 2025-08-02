@@ -23,6 +23,8 @@ import MenuXXX from "@/componentes/Aula3/Exercicio1/MenuLoja"
 import MenuLoja from "@/componentes/Aula3/Exercicio1/MenuLoja"
 import Link from "next/link"
 import { Children } from "react"
+import { userProps } from "./tipos"
+import Cadastro from "./api/cadastro/page"
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -501,10 +503,43 @@ import { Children } from "react"
 
 // ***************************************** Aula4 - ApresentaçãoRotas - rotasdinamicas com Ver Mais *****************************************
 
-export default function Index(){
+// export default function Index(){
+//     return (
+//         <div>
+//             <ListaLojaFake/>
+//         </div>
+//     );
+// }
+
+// ***************************************** Aula5 - CRUD *****************************************
+
+// se eu preciso captar os dados de uma api, a gente usa um "fetch", então farei isso
+// como tem tipada uma varivável já do localhost, vamos ter várias rotas com o passar do tempo, então é melhor usar a variável, por exe: API_ROUTE, se eu tiver que mudar a rota / servidor em algum momento, já substitui em todos os lugares que ela aparece se colocar pela variável
+// se é uma template string, é crase `
+// se não especificar nenhum método, sempre vai mapear "get" automaticamente
+// para não precisar ficar tipando sempre, vamos criar uma tipagem fora de app só para deixar tudo tipado, nem precisar ficar tipando todas as vezes que for usar ou criar algo
+// os arquivos ts nunca retornam um html, o tsx retorna html
+
+// export default async function Index(){
+    
+//     const resposta = await fetch(`${process.env.API_ROUTE}/api/users`)
+//     const dados : userProps[] = await resposta.json()
+
+//     return (
+//         <div>
+//             {dados.map((item) => (
+//                 <div key={item.id}>
+//                     <h1>nome: {item.name} email: {item.email}</h1>
+//                 </div>
+//             ))}
+//         </div>
+//     )
+// }
+
+export default async function Index(){
     return (
         <div>
-            <ListaLojaFake/>
+            <Link href={"/cadastro"}> <button className="bg-black text-white cursor-pointer"> Cadastro</button> </Link>
         </div>
-    );
+    )
 }
