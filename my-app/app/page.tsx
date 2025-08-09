@@ -552,7 +552,7 @@ export default async function Index(){
 
     return (
         <div>
-            <Link href={"/cadastro"}> <button className="bg-green-600 text-white cursor-pointer rounded-sm px-6 py-3 my-6 mx-5">Cadastrar</button> </Link>
+            <Link href={"/cadastro"}> <button className="bg-green-600 text-white text-xl cursor-pointer rounded-sm px-6 my-6 mx-5">Cadastrar</button> </Link>
 
             <div>
                 <div>
@@ -562,7 +562,7 @@ export default async function Index(){
                             {item.nome} - {item.email}
 
                             <div>
-                                <Link href={"/cadastro"}> <button className="bg-purple-600 text-white cursor-pointer rounded-sm px-6 my-6">Editar</button> </Link>
+                                <Link href={`/editar/${item.id}`}> <button className="bg-purple-600 text-white cursor-pointer rounded-sm px-6 my-6">Editar</button> </Link>
                             </div> 
                         </div>
                     </div>

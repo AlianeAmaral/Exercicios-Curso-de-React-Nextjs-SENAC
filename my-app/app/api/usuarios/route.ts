@@ -54,8 +54,39 @@ export async function POST(request: Request){
     } 
     
     catch (error) {
-        
+        return new Response(JSON.stringify({erro: error}), {
+            status: 500
+            });
     }
 }
 
+export async function PUT(request: Request){
+    const {id, nome, email} = await request.json();
+
+    try {
+        await db.query("UPDATE usuarios SET nome = ?, email = ? WHERE id = ?", [nome, email, id])
+        return Response.json({sucesso: true})
+
+    } catch (error) {
+        return new Response(JSON.stringify({erro: error}), {
+            status: 700
+        });
+    }
+
+}
+
+export async function DELETE(request:Request){
+
+    try {
+        const {id} = await request.json();
+
+        await db.query("DELETE FROM usuarios WHERE id = ?", [id])
+        return Response.json({sucesso: true})
+
+    } catch (error) {
+        return new Response(JSON.stringify({erro: error}), {
+            status: 900
+        });
+    }
+}
 
