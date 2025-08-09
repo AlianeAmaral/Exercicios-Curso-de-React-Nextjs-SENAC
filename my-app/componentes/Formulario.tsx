@@ -1,6 +1,8 @@
 "use client"
 
+import { Salvar } from "@/app/(servicos)/usuario"
 import { usuariosProps } from "@/app/tipos"
+import Link from "next/link"
 import {useRouter} from "next/navigation"
 import {useState} from "react"
 
@@ -15,7 +17,7 @@ export default function Formulario({id, nome="", email=""}: usuariosProps) {
     async function Submit(evento: React.FormEvent<HTMLFormElement>){ {/*isso é para evitar que aconteça o padrão, que é o formulário ficar resetando */}
         evento.preventDefault()
 
-        const formulario = {
+        const form = {
             id: usuarioId,
             nome: usuarioNome,
             email: usuarioEmail
@@ -24,21 +26,25 @@ export default function Formulario({id, nome="", email=""}: usuariosProps) {
         try {
             const metodo = usuarioId ? "PUT" : "POST"
 
-            const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios`, {
-            method: metodo,
-            headers: {"Content-Type":"application/json"},
-            body: JSON.stringify(formulario)
-        })
+            await Salvar(form, metodo)
+            rota.push("/");
+                
 
-            const usuario : usuariosProps[] = await resposta.json()
+        //     const resposta = await fetch(`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios`, {
+        //     method: metodo,
+        //     headers: {"Content-Type":"application/json"},
+        //     body: JSON.stringify(formulario)
+        // })
 
-            if (usuario) {
-                rota.push("/");
-                alert("Deu certo")
-            }
-            else {
-                alert("Deu errado")
-            }
+        //     const usuario : usuariosProps[] = await resposta.json()
+
+        //     if (usuario) {
+        //         rota.push("/");
+        //         alert("Deu certo")
+        //     }
+        //     else {
+        //         alert("Deu errado")
+        //     }
 
         } 
         
@@ -74,6 +80,9 @@ export default function Formulario({id, nome="", email=""}: usuariosProps) {
                     <div>
                         <button type="submit" className="bg-teal-400 p-2 rounded-sm px-6 cursor-pointer">Salvar</button>
                     </div>
+                    {/* <div>
+                        <Link <button  className="bg-gray-400 p-2 rounded-sm px-6 cursor-pointer">Voltar</button>></Link>
+                    </div> */}
                     <div>
                         {usuarioId && <button className="bg-red-400 p-2 rounded-sm px-6 cursor-pointer" onClick={Deletar}>Excluir</button>}
                     </div>
