@@ -1,4 +1,4 @@
-"use client"
+
 
 import Exercicio1MenuHorizontal from "@/componentes/Aula1/Exercicio1/MenuHorizontal"
 import Exercicio2MenuVertical from "@/componentes/Aula1/Exercicio2/MenuVertical"
@@ -23,8 +23,9 @@ import MenuXXX from "@/componentes/Aula3/Exercicio1/MenuLoja"
 import MenuLoja from "@/componentes/Aula3/Exercicio1/MenuLoja"
 import Link from "next/link"
 import { Children } from "react"
-import { userProps } from "./tipos"
-import Cadastro from "./api/cadastro/page"
+import { usuariosProps } from "./tipos"
+import Cadastro from "./cadastro/page"
+import Formulario from "@/componentes/Formulario"
 
 // function Mensagem({ children }: { children: React.ReactNode }) {
 //   return (
@@ -536,10 +537,39 @@ import Cadastro from "./api/cadastro/page"
 //     )
 // }
 
+// ***************************************** Aula6 - CRUD - GET *****************************************
+
+
+
 export default async function Index(){
+
+    const resposta = await fetch (`${process.env.NEXT_PUBLIC_API_ROUTE}/usuarios`)
+    const usuarios: usuariosProps[] = await resposta.json()
+
+    //esse usuarioProps vem do tipos.ts que é para centralizar as tipagens em um arquivo só e exportar, fica mais organizado.
+
+    console.log (usuarios)
+
     return (
         <div>
-            <Link href={"/cadastro"}> <button className="bg-black text-white cursor-pointer"> Cadastro</button> </Link>
+            <Link href={"/cadastro"}> <button className="bg-green-600 text-white cursor-pointer rounded-sm px-6 py-3 my-6 mx-5">Cadastrar</button> </Link>
+
+            <div>
+                <div>
+                {usuarios.map((item) => (
+                    <div key={item.id}>
+                        <div  className="bg-gray-100 rounded-2xl p-5 m-5 w-90">
+                            {item.nome} - {item.email}
+
+                            <div>
+                                <Link href={"/cadastro"}> <button className="bg-purple-600 text-white cursor-pointer rounded-sm px-6 my-6">Editar</button> </Link>
+                            </div> 
+                        </div>
+                    </div>
+                ))}
+                </div>
+            </div>
+
         </div>
     )
 }

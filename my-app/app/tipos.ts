@@ -1,5 +1,5 @@
-export type userProps = {
+export type usuariosProps = {
     id: number,
-    name: string,
+    nome: string,
     email: string
 }

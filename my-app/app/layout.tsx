@@ -29,9 +29,6 @@ export default function RootLayout({
       <body>
 
       <div className="flex h-screen">
-          <div>
-            <MenuLoja/>
-          </div>
           
           <div className="flex justify-center items-center">
             {children}

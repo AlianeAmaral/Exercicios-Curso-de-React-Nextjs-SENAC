@@ -15,11 +15,12 @@ import db from '@/app/api/database';
 
 // ESSE AQUI: os dados foram exportados da base de dados local:
 
+
+
 export async function GET(){
     try {
         const [rows] = await db.query<any>("SELECT * FROM usuarios");
 
-        //se a lista retornar vazia ainda vai dar true, para garantir mesmo colocamos o length, para funcionar temos que adicionar o <any> ali em cima, ele reclama porque não sabe o que vem, o any vai dizer que pode vir qualquer coisa.
         if(rows.length > 0){
             return new Response(JSON.stringify(rows), {
                 status: 200,
@@ -39,4 +40,22 @@ export async function GET(){
 
     }
 }
+
+
+//ESSE AQUI: permite criar cadastro no banco, a ordem importa
+
+export async function POST(request: Request){
+    const {nome, email} = await request.json();
+
+    try {
+        const [resultado] = await db.query<any>("INSERT INTO usuarios (nome, email) VALUES (?,?)", [nome, email])
+        return Response.json({id: resultado.insertId, nome, email})
+
+    } 
+    
+    catch (error) {
+        
+    }
+}
+
 
