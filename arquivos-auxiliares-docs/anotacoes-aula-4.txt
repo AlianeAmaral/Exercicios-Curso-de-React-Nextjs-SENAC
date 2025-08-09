@@ -1,0 +1,43 @@
+se eu criar qualquer pata dentro de app, é uma rota do sistema
+
+por isso que componentes foi criado fora da pasta app
+se eu criar uma pasta usuario dentro de app, vai criar uma URL possivel: http://localhost:3000/usuario
+
+mas nao vai funcionar porque precisa criar um arquivo page dentro da pasta usuario
+o arquivo vai ser criado como tsx porque é tsx e nao ts?
+
+R: o tsx é porque vamos fazer um return de html
+
+tem duas formas de levar o cliente para outras rotas, pelo Link que no CSS é o "a href" e com o useRouter, o useRouter vai permitir ter maior manipulação de quando quero jogar o usuário de um lado para outro facilmente
+
+só funciona em componente de cliente, então tem que usar "use client"
+
+o useRouter tem que vir do next/navigation
+
+colocando os parenteses no nome de uma pasta, eu digo para o react que nao é uma rota, embora esteja dentro do app
+
+rota dinâmica: tem uma lista de produtos, usuarios, etc, tem os atributos e um botão de editar por exemplo, vai para a tela daquele usuario espcifico ou produto, 
+
+quando clica no lapizinho, fica assim 
+
+localhost/usuario/1
+localhost/usuario/2
+
+esse numero é o ID do usuario em questao que esta editando o usuario 1, usuario 2, é um numero variavel
+então a rota vai precisar ser criada de forma variavel
+
+quando esta com colchetes [id] o sistema entende que é uma rota dinamica, dentro de usuario, junto com o page.tsx
+
+- Aprendizados:
+
+1. streaming é parte do site já estar carregado, o menu do site carregado antes do restante do site (suspense)
+2. loading é aquele carregamento no centro da tela (carregando no centro da tela)
+3. skeleton é o esqueleto que aparece quando está carregando (esqueleto, outro componente aparece enquanto isso)
+
+o loading é carregado antes do page.tsx carregar, o layout vai carregar o loading primeiro e depois o page principal
+
+exercicio 1 da aula 4 será: fazer uma página com streaming e fallback , deve direcionar para a pagina correta do id
+
+como deverá funcionar?
+
+R: o menu nao deve carregar, tem que ficar fixo, tem que ter loading para trocar de pagina e 

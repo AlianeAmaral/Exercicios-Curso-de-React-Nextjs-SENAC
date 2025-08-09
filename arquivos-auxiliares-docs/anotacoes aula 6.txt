@@ -1,0 +1,153 @@
+Penultima aula, revisão do CRUD:
+
+ATIVAR OS DOIS MODULOS NO XAMPP
+ENTRA NO LOCAHOST: http://localhost/phpmyadmin/
+CRIA O BANCO EM "NOVO" COM NOME DO BANCO;
+QUANDO FOR PARA CRIAR A TABELA, VAI NA ABA SQL E CRIA VIA CODIGO AS TABELAS, exemplo:
+
+CREATE TABLE usuarios(
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL
+    );
+
+> PROF CRIOU UM VIDEO DE 1H MAS A DIFERENÇA DELE É QUE ESTÁ COM O WORKBENCH;
+
+CLICA PARA "continuar" para gerar a tabela;
+INDEPENDENTE DA MENSAGEM, CONFIRA SE CRIOU-SE NO MENU A ESQUERDA O BANCO COM A TBELA "usuarios" por exemplo;
+
+CLICA PARA ACESSAR A TABELA, VAI EM SQL E CLICA EM INSERT
+
+INSERT INTO `usuarios`(`id`, `nome`, `email`) VALUES ('[value-1]','[value-2]','[value-3]')
+
+TIRA O VALUE 1 E RENOMEIA CONFORME O QUE QUERO CRIAR, ESTAMOS CRIANDO VIA BANCO AGORA:
+
+INSERT INTO `usuarios`(`nome`, `email`) VALUES ('[ally]','[ally@gmail.com]')
+
+CLICA EM EXECUTAR OU CONTINUAR, DEPENDE DA VERSAO
+SE CLICAR EM USUARIOS AGORA TEM NOSSO USUARIO CRIADO
+IMPORTANTE LEMBRAR O NOME DO BANCO Q COLOCAMOS
+
+COMO VAMOS EXPORTAR ESSES DADOS DO BANCO? TEMOS Q EXPOR ELE NA INTERNET
+se cria uma pasta, vc esta criando uma rota
+
+cria uma api/usuarios/route.ts > é um arquivo q espera requisições http, que é get, post, put, delete, essas coisas
+o sistema espera q eu passe coisas assim pra ele ali dentro desse arquivo especial route.ts
+
+GET: não entra nenhum parametro, ele só pega do banco e mostra
+
+export async function GET(){ 
+
+    const usuarios = [
+        {id:1, name:"ally"},
+        {id:2, name:"yoshi"}
+    ]
+    
+    return new Response(JSON.stringify(usuarios))
+}
+
+usamos o JSON aqui porque é o que permite transitar do back pra o front
+
+Para testar, acesse navegador: http://localhost:3000/api/usuarios
+
+Pra alertas: https://sweetalert2.github.io/
+
+AGORA FAREMOS DO JEITO MAIS COMUM:
+
+pare o projeto
+instale a biblioteca: npm install mysql2
+cria um arquivo na pasta api: database.js é js porque nao tem tipagem obrigatoria, se nao for assim vai ficar pedindo para tipar
+nesse database.js vai ficar a conexao com o banco de dados
+
+import mysql from 'mysql2/promise'
+
+const db = mysql.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME
+})
+
+export default db;
+
+vamos deixar com fetch com variavel, e nao declarado direto
+criamos o arquivo .env dentro da pasta my-app com essas informacoes
+
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=
+DB_NAME=turma55
+NEXT_PUBLIC_API_ROUTE=http:localhost:3000/api
+
+nunca subir o commit do .env, quando criamos o projeto nodemodels e .env ja vem por padrao no gitignore, mas se for criar do zero, precisa lembrar de colocar e nunca subir o .env e o nodemodels, depois tentar explorar o motivo de cada gitignore estar lá
+
+em uma empresa teria o sample.env que é para exemplo, só para saber os nomes q sao usados
+estudr melhor o que significa o root db_user e como segmentar os tipos de perfis
+
+curso desenvolvimento back-end - 8x de 124,87 - dia 29/09 até 11/11 de 2025.
+https://ww3.ms.senac.br/Curso/Detalhe/33358
+
+Implantar processos de codificação de aplicativos web
+96 horas
+Análise de sistemas: fundamentos, requisitos, diagrama de caso de uso e classe.
+Desenvolvimento de aplicação web: características da linguagem escolhida, comandos e funções, orientação a objetos e tratamentos de erros ou exceções.
+Estrutura de dados: pilhas e filas, listas e árvores, ordenação, pesquisa de dados e recursividade.
+Interface de desenvolvimento: ferramentas, bibliotecas e ambientes de programação (IDE).
+Linguagem SQL: utilização de comandos para consulta, alteração, inclusão, exclusão, ordenação e filtros de registros em tabelas únicas ou relacionadas.
+Modelagem de banco de dados para aplicações web: utilização das estruturas conceitual, lógica e física.
+Modelo entidade e relacionamento: tabelas, visão, atributos, índices, chave candidata, chave primária e estrangeira, relacionamentos e integridade referencial.
+Teste e versionamento da aplicação web: controle de qualidade do software, validação de testes unitários, funcionais, de usabilidade, integridade e manutenção, realizando o controle de novas versões por meio de ferramentas de SVN ou base de repositório.
+
+
+o que consideramos de importante nesse get, é bom colocar em um try catch
+
+obs: se a variavel estiver vazia () sempre vai dar true;
+o if(rows) é para checar se tem alguma coisa dentro do rows ou não
+
+
+nesse CRUD não pode ter o "use client"
+
+exemplo de botao que vai para o cadastro:
+<Link href={"/cadastro"}> <button className="bg-black text-white cursor-pointer"> Cadastro</button> </Link>
+
+se eu quero que apareça uma lista para mostrar, vou usar o map, de onde vem a funcao no map? vem do javascript
+
+se der erro no "item", é porque não tem o key item.id
+vai ontinuar dando erro pq falta colocar o userProps
+
+se vou enviar algo para o banco, utilizo o POST
+
+11:24 09/08/202511:24 09/08/202511:28 09/08/2025
+
+preciso estudar tudo q envolve criar um crud, para conseguir explicar e saber fazer de novo
+dentro do api só tem que ter usuarios, os outros, editar, cadastrar, é tudo dentro do app
+
+nao vou criar um componente de formulario só para editar, eu vou adaptar o de cadastro para ele cadastrar e editar, o de cadastro tinha () vazio, o editar vai permitir ter parametros no formulario para linkar o editar
+
+NAO ESQUEÇA q essas pastas tem que ir em app, e nao em api, api é só usuarios com os gets, posts, etc
+
+antes de colocar os parametros para o () do formulario, precisamos colocar o usuarioProps para o editar e para o page padrão
+agora vamos colocar os parametros
+
+input value={usuarioEmail} onChange={(e) 
+esse value é para vir preenchido pra editar
+
+? é um ou com obrigatoriedade do :
+&& é um if sem else
+
+- primeiro, como colocar o botao excluir na pagina inicial tambem junto com editar
+- nao esta editando, nem deletando
+- pagina nao esta mantendo tudo dentro e nao tem barra de rolagem
+
+
+vamos fazer uma pasta de serviços, dentro de app, para guardar essas funcoes que a api utiliza, como submit, delete, etc
+
+quando o arquivo é só ts, e nao tem o x, é porque nao tem retorno de html, só de javascript
+não é default porque isso faz poder exportar só 1 funcao, se formos exportar mais de uma, então nao pode ter default
+os serviços nao é rota, coloca parenteses
+
+o form é do tipo usuarioProps
+
+
+
+
