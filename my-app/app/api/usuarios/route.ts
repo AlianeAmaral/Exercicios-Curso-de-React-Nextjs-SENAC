@@ -1,6 +1,6 @@
 import db from '@/app/api/database';
 
-export async function GET(){ {/* estamos usando get aqui só para devolver o texto e mostrar, exportando uma função assíncrona do tipo get, estamos usando o async para esperar a consulta primeiro do banco para poder continuar*/}
+// export async function GET(){ {/* estamos usando get aqui só para devolver o texto e mostrar, exportando uma função assíncrona do tipo get, estamos usando o async para esperar a consulta primeiro do banco para poder continuar*/}
 
 //ESSE AQUI: foi escrito pelo código:
 
@@ -15,6 +15,7 @@ export async function GET(){ {/* estamos usando get aqui só para devolver o tex
 
 // ESSE AQUI: os dados foram exportados da base de dados local:
 
+export async function GET(){
     try {
         const [rows] = await db.query<any>("SELECT * FROM usuarios");
 
@@ -38,3 +39,4 @@ export async function GET(){ {/* estamos usando get aqui só para devolver o tex
 
     }
 }
+
